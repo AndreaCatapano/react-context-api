@@ -72,3 +72,13 @@ nav a.active::after {
   line-height: 1.6;
   flex-grow: 1;
 }
+
+.product-details-link {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}
