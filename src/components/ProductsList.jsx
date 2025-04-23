@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import ProductCard from './ProductCard';
-import PostContext from '../contexts/PostContext.jsx';
-
+import { usePosts } from "../hooks/usePosts";
 
 const ProductsList = () => {
-
-    const { posts } = useContext(PostContext);
+    const { posts } = usePosts();
 
     return (
         <div className="products-container">
@@ -17,4 +14,3 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
-

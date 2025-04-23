@@ -1,18 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import PostContext from '../contexts/PostContext.jsx';
+import { usePosts } from "../hooks/usePosts";
 
 const SingleProduct = () => {
-    const { posts } = useContext(PostContext);
+    const { posts, getPostById } = usePosts();
     const [product, setProduct] = useState(null);
-    const { id } = useParams(); // Otteniamo l'id dall'URL
+    const { id } = useParams();
 
     useEffect(() => {
         if (posts && posts.length > 0) {
-            const foundProduct = posts.find(item => item.id === parseInt(id));
-            setProduct(foundProduct);
+            setProduct(getPostById(id));
         }
-    }, [posts, id]);
+    }, [posts, id, getPostById]);
 
     if (!product) return <div>Caricamento...</div>;
 
