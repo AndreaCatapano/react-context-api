@@ -7,13 +7,13 @@ import Products from './pages/Products.jsx'
 import SingleProduct from './pages/SingleProduct.jsx'
 import DefaultLayout from './layout/DefaultLayout.jsx'
 
-import PostContext from './contexts/PostContext.jsx'
+import { PostProvider } from './contexts/PostContext.jsx'
 
 
 function App() {
 
   return (
-    <PostContext.Provider>
+    <PostProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -24,7 +24,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </PostContext.Provider >
+    </PostProvider>
   )
 }
 

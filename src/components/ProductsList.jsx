@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import ProductCard from './ProductCard';
+import PostContext from '../contexts/PostContext.jsx';
 
-const ProductsList = ({ products }) => {
+
+const ProductsList = () => {
+
+    const { posts } = useContext(PostContext);
+
     return (
         <div className="products-container">
-            {products.map(product => (
+            {posts.map(product => (
                 <ProductCard key={product.id} product={product} />
             ))}
         </div>
